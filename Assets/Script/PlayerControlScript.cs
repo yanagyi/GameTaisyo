@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControlScript : MonoBehaviour
 {
     public float speed = 10; // 動く速さ
-
+   
    
 
     public GameObject awa;

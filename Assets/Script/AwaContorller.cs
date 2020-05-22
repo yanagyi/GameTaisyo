@@ -24,9 +24,7 @@ public class AwaContorller : MonoBehaviour
 
     void Update()
     {
-
-
-
+       
         if (x >= 5.0f)
         {
             x = 5.0f;
@@ -53,10 +51,11 @@ public class AwaContorller : MonoBehaviour
 
 
         //重力
-        // Physics2D.gravity = new Vector3(0, -15, 0);
+         //Physics2D.gravity = new Vector3(0, -15, 0);
 
     }
 
+    //item拾得
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "PickUp")
@@ -67,15 +66,20 @@ public class AwaContorller : MonoBehaviour
 
 
 
-            if (x >= 3.0f || y >= 3.0f)
+            if (x >= 5.0f || y >= 5.0f)
             {
                 this.transform.localScale = new Vector3(5, 5, 0);
             }
 
         }
 
+       
+        
 
 
     }
+
+ 
+   
 
 }
