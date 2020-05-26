@@ -21,6 +21,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //もしtimescaleが止まってるならキー入力を受け付けない
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
 
         if (x >= 1.0f)
         {
