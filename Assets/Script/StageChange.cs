@@ -11,7 +11,17 @@ public class StageChange : MonoBehaviour
 
     //ステージ名;
     [SerializeField]
-    string[] stageName;  
+    string[] stageName;
+
+    [SerializeField]
+    GameObject fadeCanvasPrefab;
+
+    //フェード時の待ち時間
+    [SerializeField]
+    float fadeWaitTime = 1.0f;
+
+    GameObject fadeCanvasClone;
+    FadeCanvas fadeCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +48,21 @@ public class StageChange : MonoBehaviour
     //シーンの読み込みと待機を行うコルーチン
     IEnumerator WaitForLoadScene()
     {
+        //フェードオブジェクトを生成
+        fadeCanvasClone = Instantiate(fadeCanvasPrefab);
+
+        //コンポーネントを取得
+        fadeCanvas = fadeCanvasClone.GetComponent<FadeCanvas>();
+
+        //フェードインさせる
+        fadeCanvas.fadeIn = true;
+
+        yield return new WaitForSeconds(fadeWaitTime);
+
         //シーンを非同期で読込し、読み込まれるまで待機する
         yield return SceneManager.LoadSceneAsync(stageName[currentStageNum]);
+
+        //フェードアウトさせる
+        fadeCanvas.fadeOut = true;
     }
 }
