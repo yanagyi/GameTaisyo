@@ -25,7 +25,7 @@ public class AwaContorller : MonoBehaviour
 
     void Update()
     {
-       
+
         if (x >= 5.0f)
         {
             x = 5.0f;
@@ -52,7 +52,7 @@ public class AwaContorller : MonoBehaviour
 
 
         //重力
-         //Physics2D.gravity = new Vector3(0, -15, 0);
+        //Physics2D.gravity = new Vector3(0, -15, 0);
 
     }
 
@@ -75,27 +75,13 @@ public class AwaContorller : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if(other.gameObject.tag == "STAGE")
-        {
-            this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
-        }
-=======
-<<<<<<< Updated upstream
-
-
-=======
-    //壁に当たるとダメージ
+    //壁に当たるとダメージ&跳ね返り
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "STAGE")
         {
             this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
         }
->>>>>>> Stashed changes
->>>>>>> yanagyi
     }
 
 }
