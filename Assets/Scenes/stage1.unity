@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 1233336680}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: STAGE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2404,6 +2404,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Awa
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491342255103640829, guid: 649d5c28d2dfc7e4986a2b45d6ca290b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491342255103640829, guid: 649d5c28d2dfc7e4986a2b45d6ca290b,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 658632db52f854946a9e182f8001061b, type: 2}
+    - target: {fileID: 1491342255103640830, guid: 649d5c28d2dfc7e4986a2b45d6ca290b,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 649d5c28d2dfc7e4986a2b45d6ca290b, type: 3}
