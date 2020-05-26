@@ -72,14 +72,14 @@ public class AwaContorller : MonoBehaviour
             }
 
         }
-
-       
-        
-
-
     }
 
- 
-   
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "STAGE")
+        {
+            this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
+        }
+    }
 
 }
