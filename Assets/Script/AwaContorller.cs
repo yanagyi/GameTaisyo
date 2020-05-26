@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class AwaContorller : MonoBehaviour
@@ -73,9 +74,20 @@ public class AwaContorller : MonoBehaviour
             }
 
         }
+    }
+
+<<<<<<< Updated upstream
 
 
-
+=======
+    //壁に当たるとダメージ
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "STAGE")
+        {
+            this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
+        }
+>>>>>>> Stashed changes
     }
 
 }
