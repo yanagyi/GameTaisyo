@@ -24,7 +24,7 @@ public class FadeCanvas : MonoBehaviour
     void Start()
     {
         //シーンが変わってもこのオブジェクトは消さないように
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this.gameObject);
 
         //元の色を取得
         red = panelImage.color.r;
