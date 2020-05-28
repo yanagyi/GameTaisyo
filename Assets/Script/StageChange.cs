@@ -11,7 +11,7 @@ public class StageChange : MonoBehaviour
 
     //ステージ名;
     [SerializeField]
-    string[] stageName;
+    public string[] stageName;
 
     [SerializeField]
     GameObject fadeCanvasPrefab;
@@ -22,6 +22,7 @@ public class StageChange : MonoBehaviour
 
     GameObject fadeCanvasClone;
     FadeCanvas fadeCanvas;
+ 
 
     // Start is called before the first frame update
     void Start()
