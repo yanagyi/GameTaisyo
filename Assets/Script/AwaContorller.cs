@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
 
@@ -8,8 +9,13 @@ public class AwaContorller : MonoBehaviour
     public float speed = 10; // 動く速さ
 
     public Rigidbody2D awa; // Rididbody
+
     private float x = 5.0f;
     private float y = 5.0f;
+
+    //ゲームオーバー関連
+    [SerializeField] GameObject gameOver;
+    private bool gameover = false;
 
 
 
@@ -19,8 +25,8 @@ public class AwaContorller : MonoBehaviour
         // Rigidbody を取得
         awa = GetComponent<Rigidbody2D>();
 
-
-
+        //ゲームオーバー画面は最初非表示に
+        gameOver.SetActive(false);
     }
 
     void Update()
@@ -33,6 +39,23 @@ public class AwaContorller : MonoBehaviour
         if (y >= 5.0f)
         {
             y = 5.0f;
+        }
+
+
+        //泡が0以上小さくなったらゲームオーバー（キャラがその場から動かなくなる）
+        if(x <= 0 && y <= 0)
+        {
+            //プレイヤーの動きを固定
+            awa.constraints = RigidbodyConstraints2D.FreezeAll;
+
+            //ゲームオーバーフラグをtrueに
+            gameover = true;
+        }
+
+        //ゲームオーバーフラグがtrueになったらゲームオーバー画面表示させる関数呼ぶ
+        if (gameover == true)
+        {
+            GameOver();
         }
 
         // カーソルキーの入力を取得
@@ -84,4 +107,9 @@ public class AwaContorller : MonoBehaviour
         }
     }
 
+    //ゲームオーバーオブジェクト表示
+    void GameOver()
+    {
+        gameOver.SetActive(true);
+    }
 }
