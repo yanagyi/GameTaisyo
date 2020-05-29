@@ -118,6 +118,12 @@ public class AwaContorller : MonoBehaviour
         {
             this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
         }
+
+        //ハリセンボンの判定
+        if (other.gameObject.tag == "HARISENBON")
+        {
+            this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
+        }
     }
 
     //ゲームオーバーオブジェクト表示
