@@ -98,15 +98,23 @@ public class AwaContorller : MonoBehaviour
         }
     }
 
-    //壁とエネミーに当たるとダメージ&跳ね返り
+    //ダメージ&跳ね返り判定
     void OnCollisionEnter2D(Collision2D other)
     {
+        //ステージの判定
         if (other.gameObject.tag == "STAGE")
         {
             this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
         }
 
+        //ウニの判定
         if (other.gameObject.tag == "UNI")
+        {
+            this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
+        }
+
+        //サメの判定
+        if (other.gameObject.tag == "SHARK")
         {
             this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
         }
