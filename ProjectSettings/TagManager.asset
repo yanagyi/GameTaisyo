@@ -10,6 +10,7 @@ TagManager:
   - GAMEOVER
   - UNI
   - SHARK
+  - HARISENBON
   layers:
   - Default
   - TransparentFX

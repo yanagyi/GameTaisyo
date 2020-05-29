@@ -66,4 +66,11 @@ public class StageChange : MonoBehaviour
         //フェードアウトさせる
         fadeCanvas.fadeOut = true;
     }
+
+    //ステージチェンジオブジェクトを消す関数
+    public void DestroyStageChange()
+    {
+        Destroy(this.gameObject);
+    }
+       
 }

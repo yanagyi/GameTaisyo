@@ -98,6 +98,8 @@ MonoBehaviour:
   - stage1
   - stage2
   - stage3
+  - stage4
+  - STAGE5
   fadeCanvasPrefab: {fileID: 7775338565088298157, guid: 02d0250486c548a4b8abda70adfc3d70,
     type: 3}
   fadeWaitTime: 1
