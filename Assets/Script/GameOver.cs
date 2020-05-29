@@ -10,8 +10,11 @@ public class GameOver : MonoBehaviour
     bool retry = true;
 
     //タイトル戻るときに削除するオブジェクトの定義
-    public GameObject stageChangeObject  = GameObject.Find("StageChange");
-    public GameObject gameOverCanvasObject = GameObject.Find("GameOverCanvas");
+    public GameObject stageChangeObject;
+    public GameObject gameOverCanvasObject;
+
+    //ステージチェンジのスクリプトの入れる変数
+    StageChange script;
 
     //シーン定義
     string  name;
@@ -24,6 +27,10 @@ public class GameOver : MonoBehaviour
 
         // 現在のシーン名を取得
         name = SceneManager.GetActiveScene().name;
+
+        //ステージチェンジのスクリプトを取得
+        stageChangeObject = GameObject.Find("StageChange");
+        script = stageChangeObject.GetComponent<StageChange>();
     }
 
     // Update is called once per frame
@@ -45,21 +52,21 @@ public class GameOver : MonoBehaviour
         //フラグがタイトルにあってかつスペースが押されたらタイトルに
         if(retry == false && Input.GetKeyDown(KeyCode.Space))
         {
+            //ステージチェンジ処理重複するため消す
+            script.DestroyStageChange();
+            Destroy(gameOverCanvasObject.gameObject);
             //タイトル画面に移行
             SceneManager.LoadScene("TitleScene");
-            //ステージチェンジ処理重複するため消す
-            Destroy(stageChangeObject);
-            Destroy(gameOverCanvasObject);
         }
 
         //フラグがリトライにあってかつスペースが押されたらリトライ
         if (retry == true && Input.GetKeyDown(KeyCode.Space))
         {
-            //ゲームオーバーになったシーンのリトライ
-            SceneManager.LoadScene(name);
             //ステージチェンジ処理重複するため消す
-            Destroy(stageChangeObject);
-            Destroy(gameOverCanvasObject);
+            script.DestroyStageChange();
+            Destroy(gameOverCanvasObject.gameObject);
+            //ゲームオーバーになったシーンのリトライ
+            SceneManager.LoadScene(name);           
         }
 
     }
