@@ -9,6 +9,7 @@ TagManager:
   - STAGE
   - GAMEOVER
   - UNI
+  - SHARK
   layers:
   - Default
   - TransparentFX
