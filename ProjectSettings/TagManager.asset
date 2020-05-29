@@ -6,6 +6,10 @@ TagManager:
   tags:
   - PickUp
   - AWA
+  - STAGE
+  - GAMEOVER
+  - UNI
+  - SHARK
   layers:
   - Default
   - TransparentFX

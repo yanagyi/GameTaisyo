@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Threading;
 using UnityEngine;
 
 public class AwaContorller : MonoBehaviour
@@ -7,8 +9,13 @@ public class AwaContorller : MonoBehaviour
     public float speed = 10; // 動く速さ
 
     public Rigidbody2D awa; // Rididbody
-    private float x = 3.0f;
-    private float y = 3.0f;
+
+    private float x = 5.0f;
+    private float y = 5.0f;
+
+    //ゲームオーバー関連
+    [SerializeField] GameObject gameOver;
+    private bool gameover = false;
 
 
 
@@ -18,22 +25,37 @@ public class AwaContorller : MonoBehaviour
         // Rigidbody を取得
         awa = GetComponent<Rigidbody2D>();
 
-
-
+        //ゲームオーバー画面は最初非表示に
+        gameOver.SetActive(false);
     }
 
     void Update()
     {
 
-
-
-        if (x >= 3.0f)
+        if (x >= 5.0f)
         {
-            x = 3.0f;
+            x = 5.0f;
         }
-        if (y >= 3.0f)
+        if (y >= 5.0f)
         {
-            y = 3.0f;
+            y = 5.0f;
+        }
+
+
+        //泡が0以上小さくなったらゲームオーバー（キャラがその場から動かなくなる）
+        if(x <= 0 && y <= 0)
+        {
+            //プレイヤーの動きを固定
+            awa.constraints = RigidbodyConstraints2D.FreezeAll;
+
+            //ゲームオーバーフラグをtrueに
+            gameover = true;
+        }
+
+        //ゲームオーバーフラグがtrueになったらゲームオーバー画面表示させる関数呼ぶ
+        if (gameover == true)
+        {
+            GameOver();
         }
 
         // カーソルキーの入力を取得
@@ -53,10 +75,11 @@ public class AwaContorller : MonoBehaviour
 
 
         //重力
-        // Physics2D.gravity = new Vector3(0, -15, 0);
+        //Physics2D.gravity = new Vector3(0, -15, 0);
 
     }
 
+    //item拾得
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "PickUp")
@@ -67,15 +90,45 @@ public class AwaContorller : MonoBehaviour
 
 
 
-            if (x >= 3.0f || y >= 3.0f)
+            if (x >= 5.0f || y >= 5.0f)
             {
-                this.transform.localScale = new Vector3(3, 3, 0);
+                this.transform.localScale = new Vector3(5, 5, 0);
             }
 
         }
-
-
-
     }
 
+    //ダメージ&跳ね返り判定
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        //ステージの判定
+        if (other.gameObject.tag == "STAGE")
+        {
+            this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
+        }
+
+        //ウニの判定
+        if (other.gameObject.tag == "UNI")
+        {
+            this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
+        }
+
+        //サメの判定
+        if (other.gameObject.tag == "SHARK")
+        {
+            this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
+        }
+
+        //ハリセンボンの判定
+        if (other.gameObject.tag == "HARISENBON")
+        {
+            this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
+        }
+    }
+
+    //ゲームオーバーオブジェクト表示
+    void GameOver()
+    {
+        gameOver.SetActive(true);
+    }
 }
