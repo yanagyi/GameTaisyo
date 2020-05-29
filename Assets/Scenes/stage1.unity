@@ -2895,6 +2895,11 @@ PrefabInstance:
       propertyPath: awa
       value: 
       objectReference: {fileID: 1748115307}
+    - target: {fileID: 8094534879071215898, guid: 4718cbe0e26a08a4c8d85722a65753ce,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4718cbe0e26a08a4c8d85722a65753ce, type: 3}
 --- !u!224 &6905120038806836727
