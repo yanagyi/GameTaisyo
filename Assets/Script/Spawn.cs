@@ -31,7 +31,7 @@ public class Spawn : MonoBehaviour
             timerOne += Time.deltaTime * 13;             //(speed)
             if (timerOne > timeOne)                      //一個生成のタイマーと位置
             {
-                Instantiate(spawnPerfab, new Vector3(Random.Range(-3.0f, 3.0f), 7.5f, 
+                Instantiate(spawnPerfab, new Vector3(Random.Range(this.transform.position.x - 3.0f, this.transform.position.x + 3.0f), this.transform.position.y, 
                     0), 
                     spawnPerfab.transform.rotation);
 
