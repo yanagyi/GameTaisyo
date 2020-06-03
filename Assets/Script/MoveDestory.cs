@@ -10,7 +10,7 @@ public class MoveDestory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(transform.gameObject, 4);//三秒後Destory
+        Destroy(transform.gameObject, 2);//三秒後Destory
     }
 
     // Update is called once per frame

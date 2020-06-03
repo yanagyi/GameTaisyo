@@ -28,10 +28,10 @@ public class Spawn : MonoBehaviour
         timeWave += Time.deltaTime;
         if (timerWave < timeWave && countPerWave != 5000)//ウェーブ生成のタイマーと数量
         {
-            timerOne += Time.deltaTime * 40;             //(speed)
+            timerOne += Time.deltaTime * 13;             //(speed)
             if (timerOne > timeOne)                      //一個生成のタイマーと位置
             {
-                Instantiate(spawnPerfab, new Vector3(Random.Range(this.gameObject.transform.position.x - 3.0f, this.gameObject.transform.position.x + 3.0f), this.gameObject.transform.position.y, 
+                Instantiate(spawnPerfab, new Vector3(Random.Range(-3.0f, 3.0f), 7.5f, 
                     0), 
                     spawnPerfab.transform.rotation);
 

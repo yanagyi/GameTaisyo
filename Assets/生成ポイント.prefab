@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3835369998740300071}
   - component: {fileID: 8156607050699312736}
   - component: {fileID: 5771888988056427396}
+  - component: {fileID: 7450895187329365470}
   m_Layer: 0
   m_Name: "\u751F\u6210\u30DD\u30A4\u30F3\u30C8"
   m_TagString: Untagged
@@ -109,7 +110,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.1
+  m_GravityScale: 0.2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -141,3 +142,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7450895187329365470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6838172864059121088}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd8ec3e544993344832aeecb88f840d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
