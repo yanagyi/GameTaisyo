@@ -17,9 +17,12 @@ public class AwaContorller : MonoBehaviour
     [SerializeField] GameObject gameOver;
     private bool gameover = false;
 
-
-
-
+    //泡ダメージサウンド変数
+    [SerializeField] AudioClip AwaDamageSound;
+    [SerializeField] AudioClip AwaPickUpSound;
+    [SerializeField] AudioClip AwaMove;
+    AudioSource audioSource;
+    AudioSource audioSourceAwaMove;
     void Start()
     {
         // Rigidbody を取得
@@ -27,6 +30,11 @@ public class AwaContorller : MonoBehaviour
 
         //ゲームオーバー画面は最初非表示に
         gameOver.SetActive(false);
+
+        //AudioSouceのコンポーネントを取得
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSourceAwaMove = GetComponent<AudioSource>();
+        audioSourceAwaMove.clip = AwaMove;
     }
 
     void Update()
@@ -67,6 +75,11 @@ public class AwaContorller : MonoBehaviour
         if (moveVertical != 0 && x >= 0 && y >= 0 && awa.velocity.y >= 0)
         {
             this.transform.localScale = new Vector3(x -= 0.0005f, y -= 0.0005f, 0);
+
+            if (audioSourceAwaMove.isPlaying == false)
+            { //AwaMoVeが再生されてなかったら再生
+                audioSourceAwaMove.Play();
+            }           
         }
         var movement = new Vector3(moveHorizontal * 2, moveVertical * 2, 0);
 
@@ -88,7 +101,7 @@ public class AwaContorller : MonoBehaviour
 
             this.transform.localScale = new Vector3(x += 0.3f, y += 0.3f, 0);
 
-
+            audioSource.PlayOneShot(AwaPickUpSound);
 
             if (x >= 5.0f || y >= 5.0f)
             {
@@ -105,24 +118,28 @@ public class AwaContorller : MonoBehaviour
         if (other.gameObject.tag == "STAGE")
         {
             this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
+            audioSource.PlayOneShot(AwaDamageSound);
         }
 
         //ウニの判定
         if (other.gameObject.tag == "UNI")
         {
             this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
+            audioSource.PlayOneShot(AwaDamageSound);
         }
 
         //サメの判定
         if (other.gameObject.tag == "SHARK")
         {
             this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
+            audioSource.PlayOneShot(AwaDamageSound);
         }
 
         //ハリセンボンの判定
         if (other.gameObject.tag == "HARISENBON")
         {
             this.transform.localScale = new Vector3(x -= 0.2f, y -= 0.2f, 0);
+            audioSource.PlayOneShot(AwaDamageSound);
         }
     }
 
