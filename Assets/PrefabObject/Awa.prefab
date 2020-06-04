@@ -133,3 +133,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   awa: {fileID: 0}
+  gameOver: {fileID: 0}
+  AwaDamageSound: {fileID: 0}
