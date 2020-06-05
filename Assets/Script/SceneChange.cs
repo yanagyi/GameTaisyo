@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+    //スペースキーが押されたかの判定
+    private bool spaceKeyTrue = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +17,14 @@ public class SceneChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
+        //スペースが１回押されたら
+        if(Input.GetKeyDown(KeyCode.Space) && spaceKeyTrue == false)
         {
-            SceneManager.LoadScene("stage1");
+            //スペースキーが押された判定（オブジェクト多重動作の防止）
+            spaceKeyTrue = true;
+
+            //ステージ１に移行
+            FadeManager.Instance.LoadScene("stage1", 1.0f);
         }
     }
 }
