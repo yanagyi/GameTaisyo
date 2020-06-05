@@ -22,9 +22,6 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //シーンを切り替えてもこのゲームオブジェクトを削除しないようにする
-        DontDestroyOnLoad(gameObject);
-
         // 現在のシーン名を取得
         name = SceneManager.GetActiveScene().name;
 
@@ -54,7 +51,7 @@ public class GameOver : MonoBehaviour
         {
             //ステージチェンジ処理重複するため消す
             script.DestroyStageChange();
-            Destroy(gameOverCanvasObject.gameObject);
+            Destroy(this.gameObject);
             //タイトル画面に移行
             SceneManager.LoadScene("TitleScene");
         }
@@ -64,7 +61,7 @@ public class GameOver : MonoBehaviour
         {
             //ステージチェンジ処理重複するため消す
             script.DestroyStageChange();
-            Destroy(gameOverCanvasObject.gameObject);
+            Destroy(this.gameObject);
             //ゲームオーバーになったシーンのリトライ
             SceneManager.LoadScene(name);           
         }
