@@ -14,37 +14,72 @@ public class Spawn : MonoBehaviour
     private int countPerWave = 0;
     public GameObject spawnPerfab;
 
+    //出てくるタイミング
+
+   // public GameObject cube;
+    [SerializeField] private int showup = 100;
+    private int count;
+
+
+
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+       
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        timeWave += Time.deltaTime;
-        if (timerWave < timeWave && countPerWave != 5000)//ウェーブ生成のタイマーと数量
-        {
-            timerOne += Time.deltaTime * 13;             //(speed)
-            if (timerOne > timeOne)                      //一個生成のタイマーと位置
-            {
-                Instantiate(spawnPerfab, new Vector3(Random.Range(this.transform.position.x - 3.0f, this.transform.position.x + 3.0f), this.transform.position.y, 
-                    0), 
-                    spawnPerfab.transform.rotation);
+        count++;
 
-                countPerWave++;
-                timerOne -= timeOne;
+        if (count >= showup)
+        {
+            timeWave += Time.deltaTime;
+            if (timerWave < timeWave && countPerWave != 5000)//ウェーブ生成のタイマーと数量
+            {
+                timerOne += Time.deltaTime * 13;             //(speed)
+                if (timerOne > timeOne)                      //一個生成のタイマーと位置
+                {
+                    Instantiate(spawnPerfab, new Vector3(Random.Range(this.transform.position.x - 3.0f, this.transform.position.x + 3.0f), this.transform.position.y,
+                        0),
+                        spawnPerfab.transform.rotation);
+
+                    countPerWave++;
+                    timerOne -= timeOne;
+                }
+            }
+
+            if (timerWave >= timeWave)
+            {
+                timerWave -= timeWave;
+                countPerWave = 0;
             }
         }
 
-        if (timerWave >= timeWave)
-        {
-            timerWave -= timeWave;
-            countPerWave = 0;
-        }
+        
+
+
+
+
+
+
 
     }
+
+   
+
+    
+
+   
+
 }
