@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GoalScript : MonoBehaviour {
 
-    //クリアテキストクラス生成
-    public GameObject ClearText;
     //シーンチェンジクラス生成
     public StageChange stageChange;
 
@@ -17,9 +15,6 @@ public class GoalScript : MonoBehaviour {
     {
         //プレイヤーがまだゴールに触れていない判定
         playerGoalTouch = false;
-
-        //通常時は見えていない
-        ClearText.SetActive(false);
         
         //シーンチェンジのコンポーネント取得
         stageChange = GameObject.Find("StageChange").GetComponent<StageChange>();
@@ -38,9 +33,6 @@ public class GoalScript : MonoBehaviour {
         {
             //プレイヤーがゴールに触れた判定
             playerGoalTouch = true;
-
-            //クリアのロゴが出現
-            ClearText.SetActive(true);
 
             //次のステージに移行
             stageChange.NextStage();
