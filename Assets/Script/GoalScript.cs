@@ -10,7 +10,7 @@ public class GoalScript : MonoBehaviour {
     public StageChange stageChange;
 
     //プレイヤーがゴールに触れたかの判定の変数
-    private bool playerGoalTouch = false;
+    private bool playerGoalTouch;
 
     // Start is called before the first frame update
     void Start()

@@ -22,7 +22,7 @@ public class StageChange : MonoBehaviour
 
     GameObject fadeCanvasClone;
     FadeCanvas fadeCanvas;
- 
+
 
     // Start is called before the first frame update
     void Start()
