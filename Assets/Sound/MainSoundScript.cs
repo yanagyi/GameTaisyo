@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MainSoundScript : MonoBehaviour
 {
-    public bool DontDestroyEnabled = true;
+    public bool DontDestroyEnabled = false;
 
     // Use this for initialization
     void Start()

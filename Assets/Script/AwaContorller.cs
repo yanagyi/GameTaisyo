@@ -23,6 +23,7 @@ public class AwaContorller : MonoBehaviour
     [SerializeField] AudioClip AwaMove;
     AudioSource audioSource;
     AudioSource audioSourceAwaMove;
+
     void Start()
     {
         // Rigidbody を取得
@@ -39,6 +40,8 @@ public class AwaContorller : MonoBehaviour
 
     void Update()
     {
+        
+        
 
         if (x >= 5.0f)
         {
@@ -67,8 +70,8 @@ public class AwaContorller : MonoBehaviour
         }
 
         // カーソルキーの入力を取得
-        var moveHorizontal = Input.GetAxis("Horizontal");
-        var moveVertical = Input.GetAxis("Vertical");
+        var moveHorizontal = Input.GetAxisRaw("Horizontal");
+        var moveVertical = Input.GetAxisRaw("Vertical");
 
         // カーソルキーの入力に合わせて水平移動方向を設定
 
@@ -79,7 +82,7 @@ public class AwaContorller : MonoBehaviour
             if (audioSourceAwaMove.isPlaying == false)
             { //AwaMoVeが再生されてなかったら再生
                 audioSourceAwaMove.Play();
-            }           
+            }
         }
         var movement = new Vector3(moveHorizontal * 2, moveVertical * 2, 0);
 

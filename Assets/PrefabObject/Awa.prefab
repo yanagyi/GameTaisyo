@@ -134,4 +134,6 @@ MonoBehaviour:
   speed: 10
   awa: {fileID: 0}
   gameOver: {fileID: 0}
-  AwaDamageSound: {fileID: 0}
+  AwaDamageSound: {fileID: 8300000, guid: f12a9f83befb1b6419a867450df446c4, type: 3}
+  AwaPickUpSound: {fileID: 8300000, guid: 0ab0400d433797b4daa644ec3de0a7b9, type: 3}
+  AwaMove: {fileID: 8300000, guid: 47a4dcffb11bfdd4b94732a638d52039, type: 3}
