@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class yuka_tate : MonoBehaviour
 {
+    //publicを付けてインスペクターに表示
+    public int horizonhigh;
+    public int horizonlow;
+
+
+
     int horizon = 1;
 
     // Start is called before the first frame update
@@ -15,12 +21,12 @@ public class yuka_tate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y >= 37)
+        if (transform.position.y >= horizonhigh)
         {
             horizon = -1;
         }
 
-        if (transform.position.y <= 6)
+        if (transform.position.y <= horizonlow)
         {
             horizon = 1;
         }
