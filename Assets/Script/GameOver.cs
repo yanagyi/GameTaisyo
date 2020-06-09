@@ -51,7 +51,7 @@ public class GameOver : MonoBehaviour
         {
             //ステージチェンジ処理重複するため消す
             script.DestroyStageChange();
-            Destroy(this.gameObject);
+
             //タイトル画面に移行
             SceneManager.LoadScene("TitleScene");
         }
@@ -59,9 +59,6 @@ public class GameOver : MonoBehaviour
         //フラグがリトライにあってかつスペースが押されたらリトライ
         if (retry == true && Input.GetKeyDown(KeyCode.Space))
         {
-            //ステージチェンジ処理重複するため消す
-            script.DestroyStageChange();
-            Destroy(this.gameObject);
             //ゲームオーバーになったシーンのリトライ
             SceneManager.LoadScene(name);           
         }
