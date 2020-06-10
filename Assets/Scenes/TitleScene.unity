@@ -550,7 +550,7 @@ PrefabInstance:
     - target: {fileID: 2961920483571330826, guid: 711d2f4f67ec12c4da184ee1823b1fae,
         type: 3}
       propertyPath: stageName.Array.size
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2961920483571330826, guid: 711d2f4f67ec12c4da184ee1823b1fae,
         type: 3}
@@ -571,6 +571,61 @@ PrefabInstance:
         type: 3}
       propertyPath: stageName.Array.data[9]
       value: stage10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961920483571330826, guid: 711d2f4f67ec12c4da184ee1823b1fae,
+        type: 3}
+      propertyPath: stageName.Array.data[4]
+      value: stage5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961920483571330826, guid: 711d2f4f67ec12c4da184ee1823b1fae,
+        type: 3}
+      propertyPath: stageName.Array.data[10]
+      value: stage11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961920483571330826, guid: 711d2f4f67ec12c4da184ee1823b1fae,
+        type: 3}
+      propertyPath: stageName.Array.data[11]
+      value: stage12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961920483571330826, guid: 711d2f4f67ec12c4da184ee1823b1fae,
+        type: 3}
+      propertyPath: stageName.Array.data[12]
+      value: stage13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961920483571330826, guid: 711d2f4f67ec12c4da184ee1823b1fae,
+        type: 3}
+      propertyPath: stageName.Array.data[13]
+      value: stage14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961920483571330826, guid: 711d2f4f67ec12c4da184ee1823b1fae,
+        type: 3}
+      propertyPath: stageName.Array.data[14]
+      value: stage15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961920483571330826, guid: 711d2f4f67ec12c4da184ee1823b1fae,
+        type: 3}
+      propertyPath: stageName.Array.data[15]
+      value: stage16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961920483571330826, guid: 711d2f4f67ec12c4da184ee1823b1fae,
+        type: 3}
+      propertyPath: stageName.Array.data[16]
+      value: stage17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961920483571330826, guid: 711d2f4f67ec12c4da184ee1823b1fae,
+        type: 3}
+      propertyPath: stageName.Array.data[17]
+      value: stage18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961920483571330826, guid: 711d2f4f67ec12c4da184ee1823b1fae,
+        type: 3}
+      propertyPath: stageName.Array.data[18]
+      value: stage19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961920483571330826, guid: 711d2f4f67ec12c4da184ee1823b1fae,
+        type: 3}
+      propertyPath: stageName.Array.data[19]
+      value: stage20
       objectReference: {fileID: 0}
     - target: {fileID: 2961920483571330827, guid: 711d2f4f67ec12c4da184ee1823b1fae,
         type: 3}
