@@ -9,14 +9,18 @@ public class GameOver : MonoBehaviour
     //タイトルかリトライかのフラグ（初期値はリトライ）
     bool retry = true;
 
-    //タイトル戻るときに削除するオブジェクトの定義
+    //タイトル戻るときに削除するオブジェクトの変数
     public GameObject stageChangeObject;
     public GameObject gameOverCanvasObject;
 
     //ステージチェンジのスクリプトの入れる変数
     StageChange script;
 
-    //シーン定義
+    //オーディオの変数
+    public AudioClip sound1;
+    AudioSource audioSource;
+
+    //シーン変数
     string  name;
 
     // Start is called before the first frame update
@@ -28,6 +32,9 @@ public class GameOver : MonoBehaviour
         //ステージチェンジのスクリプトを取得
         stageChangeObject = GameObject.Find("StageChange");
         script = stageChangeObject.GetComponent<StageChange>();
+
+        //オーディオのコンポーネント取得
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,12 +45,18 @@ public class GameOver : MonoBehaviour
         {
             //フラグをタイトルに
             retry = false;
+
+            //効果音鳴らす
+            audioSource.PlayOneShot(sound1);
         }
         //左矢印を押すと
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         { 
             //フラグをリトライに
             retry = true;
+
+            //効果音鳴らす
+            audioSource.PlayOneShot(sound1);
         }
 
         //フラグがタイトルにあってかつスペースが押されたらタイトルに
