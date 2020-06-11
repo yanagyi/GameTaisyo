@@ -198,8 +198,19 @@ PrefabInstance:
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 291797603}
+    - target: {fileID: 1491342255103640831, guid: 649d5c28d2dfc7e4986a2b45d6ca290b,
+        type: 3}
+      propertyPath: awa
+      value: 
+      objectReference: {fileID: 231014097}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 649d5c28d2dfc7e4986a2b45d6ca290b, type: 3}
+--- !u!50 &231014097 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1491342255103640830, guid: 649d5c28d2dfc7e4986a2b45d6ca290b,
+    type: 3}
+  m_PrefabInstance: {fileID: 231014096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &291797602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,6 +327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameOverCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384441784348476201, guid: 3c1e6747b05ff2d4cb38902cfba74547,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1e6747b05ff2d4cb38902cfba74547, type: 3}
@@ -518,8 +534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b75b0fe4c5b4e3419d01261faaa8106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizonhigh: 0
-  horizonlow: 0
+  horizonhigh: 37
+  horizonlow: 6
 --- !u!50 &1107397622
 Rigidbody2D:
   serializedVersion: 4
@@ -736,8 +752,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b75b0fe4c5b4e3419d01261faaa8106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizonhigh: 0
-  horizonlow: 0
+  horizonhigh: 37
+  horizonlow: 6
 --- !u!50 &1213755101
 Rigidbody2D:
   serializedVersion: 4
@@ -879,8 +895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b75b0fe4c5b4e3419d01261faaa8106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizonhigh: 0
-  horizonlow: 0
+  horizonhigh: 37
+  horizonlow: 6
 --- !u!50 &1225170583
 Rigidbody2D:
   serializedVersion: 4

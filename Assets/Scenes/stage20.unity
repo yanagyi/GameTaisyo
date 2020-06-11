@@ -2679,8 +2679,19 @@ PrefabInstance:
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 513427473}
+    - target: {fileID: 1491342255103640831, guid: 649d5c28d2dfc7e4986a2b45d6ca290b,
+        type: 3}
+      propertyPath: awa
+      value: 
+      objectReference: {fileID: 277803600}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 649d5c28d2dfc7e4986a2b45d6ca290b, type: 3}
+--- !u!50 &277803600 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1491342255103640830, guid: 649d5c28d2dfc7e4986a2b45d6ca290b,
+    type: 3}
+  m_PrefabInstance: {fileID: 277803599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &310050309
 PrefabInstance:
   m_ObjectHideFlags: 0
