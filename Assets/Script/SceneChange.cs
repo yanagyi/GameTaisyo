@@ -8,10 +8,18 @@ public class SceneChange : MonoBehaviour
     //スペースキーが押されたかの判定
     private bool spaceKeyTrue = false;
 
+    //オーディオの変数
+    public AudioClip sound1;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //オーディオのコンポーネント取得
+        audioSource = GetComponent<AudioSource>();
+
+        //BGM鳴らす
+        audioSource.PlayOneShot(sound1);
     }
 
     // Update is called once per frame
@@ -25,6 +33,12 @@ public class SceneChange : MonoBehaviour
 
             //ステージ１に移行
             FadeManager.Instance.LoadScene("stage1", 1.0f);
+        }
+
+        //ESCキーが押されたらゲーム終了
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 }
