@@ -25,8 +25,8 @@ public class SceneChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //スペースが１回押されたら
-        if(Input.GetKeyDown(KeyCode.Space) && spaceKeyTrue == false)
+        //STARTボタンが１回押されたら（PC版の時はスペースキー）
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 7") && spaceKeyTrue == false)
         {
             //スペースキーが押された判定（オブジェクト多重動作の防止）
             spaceKeyTrue = true;
@@ -35,8 +35,8 @@ public class SceneChange : MonoBehaviour
             FadeManager.Instance.LoadScene("stage1", 1.0f);
         }
 
-        //ESCキーが押されたらゲーム終了
-        if(Input.GetKeyDown(KeyCode.Escape))
+        //BACKボタンが押されたらゲーム終了（PC版の時はESCキー）
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 6")) 
         {
             Application.Quit();
         }
