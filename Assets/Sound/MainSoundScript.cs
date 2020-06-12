@@ -1,19 +1,35 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainSoundScript : MonoBehaviour
 {
-    public bool DontDestroyEnabled = false;
+    //public bool DontDestroyEnabled = false;
 
-    // Use this for initialization
-    void Start()
+        //重複してサウンドオブジェクトができないようにする
+    private void Awake()
     {
-        if (DontDestroyEnabled)
+        int numMainSoundScript = FindObjectsOfType<MainSoundScript>().Length;
+        if (numMainSoundScript > 1)
         {
-            // Sceneを遷移してもオブジェクトが消えないようにする
-            DontDestroyOnLoad(this);
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
         }
     }
+
+    // Use this for initialization
+    //void Start()
+    //{
+    //    if (DontDestroyEnabled)
+    //    {
+    //        // Sceneを遷移してもオブジェクトが消えないようにする
+    //        DontDestroyOnLoad(this);
+    //    }
+    //}
 
     // Update is called once per frame
     void Update()
