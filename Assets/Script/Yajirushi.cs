@@ -20,14 +20,16 @@ public class Yajirushi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float DpadVertical = Input.GetAxisRaw("D_Pad_V");
+
         //右を押すと
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown("joystick button 9"))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || DpadVertical > 0.0f)
         {
             //矢印がタイトルの横に
             rectTransform.anchoredPosition = new Vector2(329.0f, -253.0f);
         }
         //左を押すと
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown("joystick button 8")) 
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || DpadVertical < 0.0f) 
         {
 
             //矢印がリトライの横に

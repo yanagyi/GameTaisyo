@@ -40,8 +40,10 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var DpadVertical = Input.GetAxisRaw("D_Pad_V");
+
         //右矢印を押すと
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || DpadVertical > 0 && retry == true)
         {
             //フラグをタイトルに
             retry = false;
@@ -50,7 +52,7 @@ public class GameOver : MonoBehaviour
             audioSource.PlayOneShot(sound1);
         }
         //左矢印を押すと
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        if(Input.GetKeyDown(KeyCode.LeftArrow) || DpadVertical < 0 && retry == false)
         { 
             //フラグをリトライに
             retry = true;
@@ -60,7 +62,7 @@ public class GameOver : MonoBehaviour
         }
 
         //フラグがタイトルにあってかつスペースが押されたらタイトルに
-        if(retry == false && Input.GetKeyDown(KeyCode.Space))
+        if(retry == false && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0")))
         {
             //ステージチェンジ処理重複するため消す
             script.DestroyStageChange();
@@ -70,7 +72,7 @@ public class GameOver : MonoBehaviour
         }
 
         //フラグがリトライにあってかつスペースが押されたらリトライ
-        if (retry == true && Input.GetKeyDown(KeyCode.Space))
+        if (retry == true && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0")))
         {
             //ゲームオーバーになったシーンのリトライ
             SceneManager.LoadScene(name);           
