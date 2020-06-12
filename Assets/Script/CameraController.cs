@@ -20,8 +20,8 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        //ESCキーが押されたらゲーム終了
-        if (Input.GetKeyDown(KeyCode.Escape))
+        //BACKボタンが押されたらゲーム終了（PC版の時はESCキー）
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 6"))
         {
             Application.Quit();
         }

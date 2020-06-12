@@ -20,14 +20,14 @@ public class Yajirushi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //右矢印を押すと
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        //右を押すと
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown("joystick button 9"))
         {
             //矢印がタイトルの横に
             rectTransform.anchoredPosition = new Vector2(329.0f, -253.0f);
         }
-        //左矢印を押すと
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        //左を押すと
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown("joystick button 8")) 
         {
 
             //矢印がリトライの横に
