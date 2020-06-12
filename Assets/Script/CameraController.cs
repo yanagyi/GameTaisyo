@@ -17,4 +17,13 @@ public class CameraController : MonoBehaviour
     {
         transform.position = player.transform.position + offset;
     }
+
+    void Update()
+    {
+        //ESCキーが押されたらゲーム終了
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
 }
