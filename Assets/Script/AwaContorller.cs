@@ -13,6 +13,10 @@ public class AwaContorller : MonoBehaviour
     private float x = 5.0f;
     private float y = 5.0f;
 
+    //泡の縮小する値
+    public float awaChidimuX = 0.0005f;
+    public float awaChidimuY = 0.0005f;
+
     //ゲームオーバー関連
     [SerializeField] GameObject gameOver;
     private bool gameover = false;
@@ -77,7 +81,7 @@ public class AwaContorller : MonoBehaviour
 
         if (moveVertical != 0 && x >= 0 && y >= 0 && awa.velocity.y >= 0)
         {
-            this.transform.localScale = new Vector3(x -= 0.0005f, y -= 0.0005f, 0);
+            this.transform.localScale = new Vector3(x -= awaChidimuX, y -= awaChidimuY, 0);
 
             if (audioSourceAwaMove.isPlaying == false)
             { //AwaMoVeが再生されてなかったら再生

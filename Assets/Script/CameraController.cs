@@ -17,4 +17,13 @@ public class CameraController : MonoBehaviour
     {
         transform.position = player.transform.position + offset;
     }
+
+    void Update()
+    {
+        //BACKボタンが押されたらゲーム終了（PC版の時はESCキー）
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 6"))
+        {
+            Application.Quit();
+        }
+    }
 }
