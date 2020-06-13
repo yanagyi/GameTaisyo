@@ -131,8 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250aaa804cc91d84d9367f646fef39e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 50
   awa: {fileID: 0}
+  awaChidimuX: 0.0005
+  awaChidimuY: 0.0005
   gameOver: {fileID: 5384441784348476201, guid: 3c1e6747b05ff2d4cb38902cfba74547,
     type: 3}
   AwaDamageSound: {fileID: 8300000, guid: f12a9f83befb1b6419a867450df446c4, type: 3}
