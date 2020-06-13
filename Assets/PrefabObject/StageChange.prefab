@@ -115,6 +115,7 @@ MonoBehaviour:
   - stage18
   - stage19
   - stage20
+  - ClearScene
   fadeCanvasPrefab: {fileID: 7775338565088298157, guid: 02d0250486c548a4b8abda70adfc3d70,
     type: 3}
   fadeWaitTime: 1
