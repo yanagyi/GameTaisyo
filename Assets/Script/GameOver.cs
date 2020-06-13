@@ -13,7 +13,7 @@ public class GameOver : MonoBehaviour
     public GameObject stageChangeObject;
     public GameObject gameOverCanvasObject;
 
-    //スクリプトの入れる変数
+    //ステージチェンジの変数
     StageChange script;
 
     //オーディオの変数
