@@ -28,6 +28,10 @@ public class AwaContorller : MonoBehaviour
     AudioSource audioSource;
     AudioSource audioSourceAwaMove;
 
+    //タイマーの変数
+    GameObject timer;
+    TimerScript timerScript;
+
     void Start()
     {
         // Rigidbody を取得
@@ -40,12 +44,16 @@ public class AwaContorller : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSourceAwaMove = GetComponent<AudioSource>();
         audioSourceAwaMove.clip = AwaMove;
+
+        //タイマーの変数取得
+        timer = GameObject.Find("Text");
+        timerScript = timer.GetComponent<TimerScript>();
     }
 
     void Update()
     {
-        
-        
+        //タイマーの変数をアワコンの変数に入れる
+        float timercount = timerScript.countdown;
 
         if (x >= 5.0f)
         {
@@ -57,8 +65,8 @@ public class AwaContorller : MonoBehaviour
         }
 
 
-        //泡が0以上小さくなったらゲームオーバー（キャラがその場から動かなくなる）
-        if(x <= 0 && y <= 0)
+        //泡が0以上小さくなるか制限時間が切れたらゲームオーバー（キャラがその場から動かなくなる）
+        if (x <= 0 && y <= 0 || timercount <= 0)  
         {
             //プレイヤーの動きを固定
             awa.constraints = RigidbodyConstraints2D.FreezeAll;
